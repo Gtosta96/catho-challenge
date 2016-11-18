@@ -1,0 +1,23 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Formulário montado com Angular e Bootstrap, onde os testes desenvolvidos farão validações.",
+  "main": "index.js",
+  "homepage": "",
+  "author": "Gabriel Tosta",
+  "license": "ISC",
+  "scripts": {
+    "start": "./node_modules/.bin/http-server ./www -o --cors"
+  },
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "http-server": "^0.9.0",
+    "jshint": "^2.9.4"
+  }
+}

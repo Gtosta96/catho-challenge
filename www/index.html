@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Previsão do tempo</title>
+
+		<!-- Application external CSS -->
+		<link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="app/vendor/bootstrap/dist/css/bootstrap-theme.css">
+		<link rel="stylesheet" href="app/vendor/angular-datatables/dist/css/angular-datatables.min.css">
+
+		<!--Application CSS-->
+		<link rel="stylesheet" href="css/application.css">
+		<link rel="stylesheet" href="css/auxiliar.css">
+
+		<!-- Application external javascript -->
+		<script src="app/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="app/vendor/angular/angular.js"></script>
+		<script src="app/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="app/vendor/angular-resource/angular-resource.min.js"></script>
+		<script src="app/vendor/angular-modal-service/dst/angular-modal-service.min.js"></script>
+		<script src="app/vendor/chart.js/dist/Chart.min.js"></script>
+		<script src="app/vendor/angular-chart.js/dist/angular-chart.min.js"></script>
+
+		<script src="app/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script src="app/vendor/angular-datatables/dist/angular-datatables.min.js"></script>
+
+		<!-- Application configuration -->
+		<script src="app/app.modules.js"></script>
+		<script src="app/app.constants.js"></script>
+		<script src="app/app.run.js"></script>
+		<script src="app/app.routes.js"></script>
+
+		<!--Controllers-->
+		<script src="app/components/home/home.controller.js"></script>
+		
+		<!--Services-->
+		<script src="app/components/home/home.service.js"></script>
+		
+		<!--Shared-->
+		<script src="app/shared/rest/rest.service.js"></script>
+		<script src="app/shared/share/share.service.js"></script>
+		<script src="app/shared/mock/mock.service.js"></script>
+	</head>
+	<body class="application-background" ng-app="test">
+		<div ui-view></div>
+	</body>
+</html>
