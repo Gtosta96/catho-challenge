@@ -6,12 +6,28 @@
 
     function mockService() {
         return {
-            mock: mock
+            assets: assets
         }
-    }
 
-    function mock() {
-        return {}
+        function assets() {
+            return {
+                'curitiba': {
+                    backgrounds: [
+                        'curitiba-background.jpg'
+                    ]
+                },
+                'florianopolis': {
+                    backgrounds: [
+                        'florianopolis-background.jpg'
+                    ]
+                },
+                'santos': {
+                    backgrounds: [
+                        'santos-background.jpg'
+                    ]
+                },
+            }
+        }
     }
 
 }());

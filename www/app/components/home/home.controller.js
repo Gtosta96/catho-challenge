@@ -4,26 +4,26 @@
     angular.module('test.home.controller', [])
     .controller('HomeController', homeController);
 
-    homeController.$inject = ['HomeService', 'MockService'];
-    function homeController(HomeService, MockService) {
+    homeController.$inject = ['WeatherForecastService', 'AssetsService'];
+    function homeController(WeatherForecastService, AssetsService) {
 
         var vm = this;
+        vm.carouselIndex = 0;
         vm.data;
 
         getData();
 
         function getData() {
-                HomeService.getAllWeatherForecasts()
-                .then(onDone)
+                WeatherForecastService.getAllWeatherForecasts()
+                .then(getAssets)
                 .catch(onFail);
 
-                function onDone(xhr) {
-                    vm.data = xhr;
+                function getAssets(xhr) {
+                    vm.data = AssetsService.getAssets(xhr);
                 } 
 
                 function onFail(xhr) {
                     console.log(xhr);
-                    //AlertService.httpError(xhr);
                 }
             }            
         }

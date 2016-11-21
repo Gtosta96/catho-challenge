@@ -6,10 +6,16 @@ angular.module('test',
 
 		'test.home.controller',
 		
-		'test.home.service',
+		'test.weatherForecast.service',
 		'test.rest.service',
-		'test.share.service',
+		'test.assets.service',
 		'test.mock.service',
+
+		'test.setBackground.directive',
+
+		'test.toFixed.filter',
 		
 		'ui.router',
+		'angularMoment',
+		'angular-carousel'
 	]);
