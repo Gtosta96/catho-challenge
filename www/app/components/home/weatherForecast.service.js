@@ -17,19 +17,9 @@
 
         function getAllWeatherForecasts() {
 
-            const OPEN_WEATHER = {
-                APP_ID: '82714a9715df3de6613f994f893d6744',
-                UNITS: 'metric',
-                CITIES_ID: {
-                    FLORIANOPOLIS: 3463237,
-                    CURITIBA: 6322752,
-                    SANTOS: 3449433
-                }
-            }
-
             var citiesId = OPEN_WEATHER.CITIES_ID;
             var promises = Object.keys(citiesId).reduce(function(prev, cur, index) {
-                var params = { appId: OPEN_WEATHER.APP_ID, id: citiesId[cur], units: OPEN_WEATHER.UNITS };
+                var params = { appId: OPEN_WEATHER.APP_ID, id: citiesId[cur], units: OPEN_WEATHER.UNITS, lang: OPEN_WEATHER.LANG };
                 prev[index] = RestService.getWeatherForecast.get(params).$promise;
 
                 return prev;
@@ -54,11 +44,13 @@
             dataArray.forEach(function(data) {
                
                 var defaultMomentDate = moment.unix(data.list[0].dt);
-                var defaultHour = defaultMomentDate.hour();
+                var defaultMomentDateUTC = moment.utc(defaultMomentDate);
+                var defaultHour = defaultMomentDateUTC.hour();
                 
                 var weatherForecast = data.list.reduce(function(result, cur, index) {
                     var momentDate = moment.unix(cur.dt);
-                    if(momentDate.hour() == defaultHour) { result.push(_extractData(momentDate, cur)); }
+                    var momentDateUTC = moment.utc(momentDate);
+                    if(momentDateUTC.hour() == defaultHour) { result.push(_extractData(momentDateUTC, cur)); }
 
                     return result;
                 }, []);

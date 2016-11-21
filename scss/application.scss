@@ -1,4 +1,4 @@
-html, body, .ng-scope, .container-fluid, .row  {
+html, body, .ng-scope, .container-fluid, .row {
     height: 100%;
 }
 
@@ -9,7 +9,7 @@ body {
 }
 
 .application-background {
-	//background-image: url(../images/application-background.jpg);
+	background-image: url(../images/application-background.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -19,19 +19,10 @@ body {
   	background-size: cover;
 }
 
-.blur-bgimage:before {
-    content: "";
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    width: 100%;
+.carousel-wrapper {
     height: 100%;
-    background: inherit;
-    z-index: -1;
-    filter: blur(30px);
-    -moz-filter: blur(30px);
-    -webkit-filter: blur(30px);
-    -o-filter: blur(30px);
+    width: 80%;
+    margin: 0 auto;
 }
 
 .info-box {
@@ -74,6 +65,7 @@ body {
         height: 30px;
     }
 }
+
 .weather-forecast-quantitatives {
     color: #fff;
     text-align: center;
@@ -106,8 +98,31 @@ body {
     }
 }
 
+.city-background-info {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    &.city-name {
+        margin-left: 20px;
+        color: #fff;
+        text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    }
+}
+
+//angular carousel
+.rn-carousel-control {
+    font-size: 40px;
+    color: #fff;
+}
+
 @media (min-width: 992px) {
     .vertical-bordered:not(:last-child)  {
         border-right: 1px solid rgba(0, 0, 0, 0.15);
     }
+}
+
+@media (min-width: 768px) {
+    .xs-overflow-y {
+    overflow-y: auto !important;
+}
 }

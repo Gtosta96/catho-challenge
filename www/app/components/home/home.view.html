@@ -1,11 +1,20 @@
 <div class="container">
-	<ul rn-carousel>
-		<li ng-repeat="data in vm.data">
-			<tt-set-background ng-if="data.assets.backgrounds" classes="['application-background', 'city-background']" source="data.assets.backgrounds">
+	<div class="carousel-wrapper">
+		<ul ng-if="vm.data" rn-carousel rn-carousel-controls class="xs-overflow-y">
+			<li ng-repeat="data in vm.data">
+				<!-- <tt-set-background ng-if="data.assets.backgrounds" classes="['application-background', 'city-background']" source="data.assets.backgrounds"></tt-set-background> -->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="city-background-wrapper">
-							<img class="city-background" alt="Cidade">
+							<figure>
+								<img ng-src="images/{{ ::data.assets.backgrounds[0] }}" class="city-background" alt="Foto da cidade de {{ ::data.city }}">
+							<figure>
+							<div class="city-background-info">
+								<div class="city-background-info city-name">
+									<h2>{{ ::data.city }}, {{ ::data.country }}</h2>
+								</div>
+								
+							</div>
 						</div>
 						<div class="info-box">
 							<div class="city-weatherForecast-wrapper">
@@ -14,28 +23,28 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="">
-													<div class="primary weather-forecast-temperature">{{ weatherForecast.quantitative.temperature | ttToFixed: 0 }}º</div>
+													<div class="primary weather-forecast-temperature">{{ ::weatherForecast.quantitative.temperature | ttToFixed: 0 }}º</div>
 													<div class="primary weather-forecast-date">
-														<span>{{ weatherForecast.momentDate | amDateFormat:'dddd'}}</span> - <span>{{ weatherForecast.momentDate | amDateFormat:'DD/MM/YY'}}</span>
+														<span>{{ ::weatherForecast.momentDate | amDateFormat:'dddd'}}</span> - <span>{{ weatherForecast.momentDate | amDateFormat:'DD/MM/YY'}}</span>
 													</div>
 												</div>
 											</div>
 											<div class="col-md-6">
-												<div class="primary weather-forecast-icon">
-													<img ng-src="http://openweathermap.org/img/w/{{ weatherForecast.weather.icon }}.png">
+												<div class="primary weather-forecast-icon" title="{{ ::weatherForecast.weather.description }}">
+													<img ng-src="http://openweathermap.org/img/w/{{ ::weatherForecast.weather.icon }}.png">
 												</div>
 												<div class="row weather-forecast-quantitatives">
-													<div class="col-xs-4 col-sm-4 col-md-4">
+													<div class="col-xs-4 col-sm-4 col-md-4" title="Temperatura máxima">
 														<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-														{{ weatherForecast.quantitative.maxTemp | ttToFixed: 0 }}
+														{{ weatherForecast.quantitative.maxTemp | ttToFixed: 0 }}º
 													</div>
-													<div class="col-xs-4 col-sm-4 col-md-4">
+													<div class="col-xs-4 col-sm-4 col-md-4" title="Temperatura minima">
 														<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-														{{ weatherForecast.quantitative.minTemp | ttToFixed: 0 }}
+														{{ ::weatherForecast.quantitative.minTemp | ttToFixed: 0 }}º
 													</div>
-													<div class="col-xs-4 col-sm-4 col-md-4">
+													<div class="col-xs-4 col-sm-4 col-md-4" title="Humidade">
 														<span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
-														{{ weatherForecast.quantitative.humidity | ttToFixed: 0 }}
+														{{ ::weatherForecast.quantitative.humidity | ttToFixed: 0 }}%
 													</div>
 												</div>
 											</div>
@@ -44,12 +53,12 @@
 									<div ng-if="!$first" ng-repeat-end class="col-md-2 vertical-bordered">
 										<div class="">
 											<div class="secondary weather-forecast-date">
-												<span>{{ weatherForecast.momentDate | amDateFormat:'ddd'}}</span> - <span>{{ weatherForecast.momentDate | amDateFormat:'DD/MM/YY'}}</span> 
+												<span>{{ ::weatherForecast.momentDate | amDateFormat:'ddd'}}</span> - <span>{{ ::weatherForecast.momentDate | amDateFormat:'DD/MM/YY'}}</span> 
 											</div>
-											<div class="secondary weather-forecast-icon">
-												<img ng-src="http://openweathermap.org/img/w/{{ weatherForecast.weather.icon }}.png">
+											<div class="secondary weather-forecast-icon" title="{{ ::weatherForecast.weather.description }}">
+												<img ng-src="http://openweathermap.org/img/w/{{ ::weatherForecast.weather.icon }}.png" alt="Icone {{ ::weatherForecast.weather.description }}">
 											</div>
-											<div class="secondary weather-forecast-temperature">{{ weatherForecast.quantitative.temperature | ttToFixed: 0 }}º</div>
+											<div class="secondary weather-forecast-temperature">{{ ::weatherForecast.quantitative.temperature | ttToFixed: 0 }}º</div>
 										</div>
 									</div>
 								</div>
@@ -57,7 +66,7 @@
 						</div>
 					</div>
 				</div>
-			</tt-set-background>
-		</li>
-	</ul>
+			</li>
+		</ul>
+	</div>
 </div>

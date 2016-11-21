@@ -8,7 +8,6 @@
     function homeController(WeatherForecastService, AssetsService) {
 
         var vm = this;
-        vm.carouselIndex = 0;
         vm.data;
 
         getData();
@@ -27,5 +26,4 @@
                 }
             }            
         }
-        
 }());
