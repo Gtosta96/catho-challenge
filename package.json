@@ -1,7 +1,7 @@
 {
   "name": "tests",
   "version": "1.0.0",
-  "description": "Formulário montado com Angular e Bootstrap, onde os testes desenvolvidos farão validações.",
+  "description": "Aplicação de teste.",
   "main": "index.js",
   "homepage": "",
   "author": "Gabriel Tosta",

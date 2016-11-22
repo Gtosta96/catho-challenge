@@ -1,3 +1,6 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
 html, body, .ng-scope, .container-fluid, .row {
     height: 100%;
 }
@@ -13,10 +16,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+    @include background-size(cover);
 }
 
 .carousel-wrapper {
@@ -28,11 +28,8 @@ body {
 .info-box {
     margin: 0 auto;
     padding: 25px 25px 30px 25px;
-	background: rgba(255,255,255,0.10);
-	border-radius: 0 0 4px 4px;
-	-moz-border-radius: 0 0 4px 4px;
-	-webkit-border-radius: 0 0 4px 4px;
-	border-radius: 0 0 10px 10px;
+	background: $default-bg;
+    @include border-radius(0 0 4px 4px);
 }
 
 .city-background-wrapper { 
@@ -85,7 +82,7 @@ body {
     text-align: center;
     color: #fff;
     padding: 5px;
-	background: rgba(000,000,000,0.15);
+	background: $default-bg;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -111,18 +108,18 @@ body {
 
 //angular carousel
 .rn-carousel-control {
-    font-size: 40px;
+    font-size: 60px;
     color: #fff;
 }
 
 @media (min-width: 992px) {
     .vertical-bordered:not(:last-child)  {
-        border-right: 1px solid rgba(0, 0, 0, 0.15);
+        border-right: 1px solid $default-bg;
     }
 }
 
 @media (min-width: 768px) {
     .xs-overflow-y {
     overflow-y: auto !important;
-}
+    }
 }

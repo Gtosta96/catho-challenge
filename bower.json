@@ -1,6 +1,6 @@
 {
   "name": "tests",
-  "description": "Formulário montado com Angular e Bootstrap, onde os testes desenvolvidos farão validações.",
+  "description": "Aplicação de teste.",
   "main": "index.js",
   "license": "ISC",
   "homepage": "",
@@ -17,11 +17,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "angular-resource": "^1.5.8",
-    "angular-modal-service": "^0.10.1",
-    "angular-chart.js": "^1.0.3",
     "angular": "^1.5.8",
     "angular-ui-router": "ui-router#^0.3.2",
-    "angular-datatables": "^0.5.5",
     "angular-moment": "^1.0.0",
     "angular-carousel": "^1.0.1"
   }

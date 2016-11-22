@@ -25,10 +25,10 @@ body {
   margin: 0 auto;
   padding: 25px 25px 30px 25px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
   -webkit-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 10px 10px; }
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px; }
 
 .city-background {
   width: 100%; }
@@ -65,7 +65,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 5px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -83,12 +83,12 @@ body {
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000; }
 
 .rn-carousel-control {
-  font-size: 40px;
+  font-size: 60px;
   color: #fff; }
 
 @media (min-width: 992px) {
   .vertical-bordered:not(:last-child) {
-    border-right: 1px solid rgba(0, 0, 0, 0.15); } }
+    border-right: 1px solid rgba(255, 255, 255, 0.1); } }
 
 @media (min-width: 768px) {
   .xs-overflow-y {

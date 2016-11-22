@@ -1,14 +1,16 @@
 (function(){
 	'use strict'
 
-	angular.module('test.run', ['datatables'])
+	/**
+     * Módulo responsável rodar configurações da aplicação. - (22/11/16).
+     * 
+     * @author: Gabriel Tosta - gabrieltosta3@gmail.com
+     * @version: 1.0.0
+     */	
+	angular.module('test.run', [])
 	.run(run);
 
-	function run(DTDefaultOptions, amMoment) {
-		DTDefaultOptions.setOption('paging', false);
-		DTDefaultOptions.setOption('bInfo', false);
-		//DTDefaultOptions.setOption('searching', false);
-
+	function run(amMoment) {
 		amMoment.changeLocale('pt-br');
 	};
 
