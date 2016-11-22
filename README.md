@@ -7,7 +7,6 @@ npm install
 bower install
 
 npm start (inicia a aplicação)
-~~npm test (roda os testes da aplicação)~~
 ```
 
 Styleguide da arquitetura (JohnPapa):
