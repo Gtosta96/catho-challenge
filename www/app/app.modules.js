@@ -20,7 +20,7 @@
 		'test.assets.service',
 		'test.mock.service',
 
-		'test.setBackground.directive',
+		// 'test.setBackground.directive',
 
 		'test.toFixed.filter',
 
