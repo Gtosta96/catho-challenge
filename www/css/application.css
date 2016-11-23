@@ -90,6 +90,6 @@ body {
   .vertical-bordered:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.1); } }
 
-@media (min-width: 768px) {
+@media (max-width: 992px) {
   .xs-overflow-y {
     overflow-y: auto !important; } }
