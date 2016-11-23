@@ -9,8 +9,8 @@
      * 
      * @author: Gabriel Tosta - gabrieltosta3@gmail.com
      * @version: 1.0.0
-     * @param WeatherForecastService - Service responsável por recuperar informações da API OpenWeather.
-     * @param AssetsService - Service responsável por recuperar assets utilizados na aplicação.
+     * @param {Object} WeatherForecastService - Service responsável por recuperar informações da API OpenWeather.
+     * @param {Object} AssetsService - Service responsável por recuperar assets utilizados na aplicação.
      */
     homeController.$inject = ['WeatherForecastService', 'AssetsService'];
     function homeController(WeatherForecastService, AssetsService) {
@@ -30,7 +30,7 @@
 
                 /**
                  * Função responsável por recuperar assets e atribuir ao virtual model através da service AssetsService
-                 * @param xhr - Resposta da service AssetsService.
+                 * @param {Object} xhr - Resposta da service AssetsService.
                  */
                 function getAssets(xhr) {
                     vm.data = AssetsService.getAssets(xhr);
@@ -38,7 +38,7 @@
 
             /**
              * Função responsável por controlar requisições falhas.
-             * @param xhr - Resposta falha da api OpenWeather
+             * @param {Object} xhr - Resposta falha da api OpenWeather
              */
                 function onFail(xhr) {
                     console.log(xhr);

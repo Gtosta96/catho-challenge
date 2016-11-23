@@ -9,10 +9,10 @@
      * 
      * @author: Gabriel Tosta - gabrieltosta3@gmail.com
      * @version: 1.0.0
-     * @param $q - Injeção Angular Defer
-     * @param moment - Biblioteca externa moment
-     * @param OPEN_WEATHER - Constante OPEN_WEATHER
-     * @param RestService - Service responsável por disponibilizar RESTs a serem consumidos
+     * @param {Object} $q - Injeção Angular Defer
+     * @param {Object} moment - Biblioteca externa moment
+     * @param {Object} OPEN_WEATHER - Constante OPEN_WEATHER
+     * @param {Object} RestService - Service responsável por disponibilizar RESTs a serem consumidos
      * @returns getWeatherForecastById, getAllWeatherForecasts - Funções que retornam objetos parseados com retorno da API OpenWeather
      */
     weatherForecast.$inject = ['$q', 'moment', 'OPEN_WEATHER', 'RestService'];
@@ -65,6 +65,7 @@
         
         /**
          * Função responsável por construir array de objetos apresentados na view.
+         * @private
          * @param dataArray - Array de dados retornados pela API OpenWeather
          * @return parsedArray - Array de objetos contruidos da forma necessária para ser apresentado na view.
          */
@@ -101,6 +102,7 @@
 
         /**
          * Função responsável por construir objeto com os dados informativos sobre o tempo no dia.
+         * @private
          * @param momentDate - Data construída através da biblioteca Moment.
          * @param data - Dados da API OpenWeather sobre o tempo no dia.
          * @return Object - Objeto com informações relevantes sobre o tempo no dia.

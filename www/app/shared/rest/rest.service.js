@@ -9,7 +9,7 @@
      * 
      * @author: Gabriel Tosta - gabrieltosta3@gmail.com
      * @version: 1.0.0
-	 * @param $resource - Injeção Angular $resource.
+	 * @param {Object} $resource - Injeção Angular $resource.
      * @returns getWeatherForecast - Função que recupera dados da API OpenWeather.
      */
 	restService.$inject = ['$resource'];
